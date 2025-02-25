@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
-import NavBar from '@/_components/layout/NavBar'
 import Link from 'next/link'
 import Route from '@/_enums/Route'
 
@@ -30,9 +29,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex min-h-screen pb-16 max-w-lg mx-auto font-medium">
+          <div className="p-4">{children}</div>
+        </div>
 
-        <div className="fixed bottom-0 left-0 z-50 w-full h-16 border-t bg-gray-700 border-gray-600">
+        <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-gray-700">
           <div className="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
             <Link
               href={Route.HOME}
